@@ -30,10 +30,12 @@ busybox mount -t sysfs sysfs /sys
 busybox echo 255 > ${BOOTREC_LED_RED}
 busybox echo 0 > ${BOOTREC_LED_GREEN}
 busybox echo 255 > ${BOOTREC_LED_BLUE}
+busybox echo 50 > ${BOOTREC_VIBRATOR}
 
 # keycheck
 busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
 busybox sleep 3
+busybox echo 30 > ${BOOTREC_VIBRATOR}
 
 # android ramdisk
 load_image=/sbin/ramdisk.cpio
