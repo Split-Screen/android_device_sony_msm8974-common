@@ -40,7 +40,6 @@ load_image=/sbin/ramdisk.cpio
 
 # keycheck
 busybox timeout -t 3 keycheck
-busybox echo 30 > ${BOOTREC_VIBRATOR}
 
 # boot decision
 if [ $? -eq 42 ] || busybox grep -q warmboot=0x77665502 /proc/cmdline ; then
